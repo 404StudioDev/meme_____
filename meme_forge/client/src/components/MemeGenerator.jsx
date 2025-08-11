@@ -127,10 +127,10 @@ const MemeGenerator = () => {
   }, []);
 
   return (
-    <div className="flex flex-col lg:flex-row gap-6 max-w-7xl mx-auto px-4 py-6">
+    <div className="flex flex-col xl:flex-row gap-4 max-w-7xl mx-auto">
       {/* Image Upload */}
-      <div className="w-full lg:w-1/4">
-        <div className="bg-white rounded-2xl shadow-lg p-5 border border-gray-200">
+      <div className="w-full xl:w-80 flex-shrink-0">
+        <div className="bg-white rounded-lg shadow-md p-4 border border-gray-200">
           <div className="flex items-center gap-2 mb-4">
             {mediaType === 'video' ? (
               <Video className="h-6 w-6 text-blue-600" />
@@ -147,7 +147,7 @@ const MemeGenerator = () => {
       </div>
 
       {/* Preview */}
-      <div className="flex-1 min-w-[450px] flex flex-col items-center">
+      <div className="flex-1 flex flex-col items-center">
         <div className="flex items-center gap-3 mb-4">
           <h3 className="text-lg font-semibold text-gray-900">Preview</h3>
           {mediaType === 'video' && selectedImage && (
@@ -186,7 +186,7 @@ const MemeGenerator = () => {
               )}
               <canvas
                 ref={previewRef}
-                className="w-full max-w-[600px] max-h-[550px] rounded-xl shadow-md border border-gray-300"
+                className="w-full max-w-[500px] max-h-[500px] rounded-lg shadow-md border border-gray-300"
                 width={600}
                 height={600}
               />
@@ -206,7 +206,7 @@ const MemeGenerator = () => {
             </button>
           </>
         ) : (
-          <div className="w-full max-w-lg h-96 border-2 border-dashed border-gray-300 rounded-xl flex items-center justify-center bg-gray-50">
+          <div className="w-full max-w-md h-80 border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center bg-gray-50">
             <div className="text-center">
               <ImageIcon className="h-12 w-12 text-gray-400 mx-auto mb-3" />
               <p className="text-base text-gray-600 font-medium">
@@ -221,8 +221,8 @@ const MemeGenerator = () => {
       </div>
 
       {/* Text Settings & Actions */}
-      <div className="w-full lg:w-1/4 space-y-5">
-        <div className="bg-white rounded-2xl shadow-lg p-5 border border-gray-200">
+      <div className="w-full xl:w-80 flex-shrink-0 space-y-4">
+        <div className="bg-white rounded-lg shadow-md p-4 border border-gray-200">
           <div className="flex items-center gap-2 mb-4">
             <Type className="h-6 w-6 text-purple-600" />
             <h3 className="text-lg font-semibold text-gray-900">Text Settings</h3>
@@ -241,7 +241,7 @@ const MemeGenerator = () => {
           </div>
         </div>
 
-        <div className="bg-white rounded-2xl shadow-lg p-5 border border-gray-200">
+        <div className="bg-white rounded-lg shadow-md p-4 border border-gray-200">
           <div className="flex items-center gap-2 mb-3">
             <Palette className="h-6 w-6 text-green-600" />
             <h3 className="text-lg font-semibold text-gray-900">Actions</h3>
